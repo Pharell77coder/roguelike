@@ -10,11 +10,11 @@ class Tile:
         self.block: bool = block
 
     def draw(self, surface: pygame.Surface, x: int, y: int) -> None:
-        pygame.draw.rect(surface, self.color, (x * SIZE_MAPS, y * SIZE_MAPS, SIZE_MAPS, SIZE_MAPS))
+        pygame.draw.rect(surface, self.color, (x * SIZE_MAPS, y * SIZE_MAPS, SIZE_MAPS-BORDER, SIZE_MAPS-BORDER))
 
 
-plains = Tile("", YELLOW)
-forest = Tile("", GREEN)
-pines = Tile("", CYAN)
-mountain = Tile("", WHITE, block=True)
-water = Tile("", BLUE, block=True)
+plains = Tile("", (0, 200, 0))
+forest = Tile("", (0, 128, 0))
+pines = Tile("", (0, 100, 0))
+mountain = Tile("", (139, 69, 19), block=True)
+water = Tile("", (0, 191, 255), block=True)
